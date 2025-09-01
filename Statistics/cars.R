@@ -1,3 +1,6 @@
+library(tibble)
+library(dplyr)
+
 Data_cars <- mtcars
 print(Data_cars)
 
@@ -22,3 +25,19 @@ print(median(Data_cars$wt))
 
 #-table will turn the biggest value into the smallest => sort descending
 print(names(sort(-table(Data_cars$wt))) [1])
+
+Data_cars |>
+  filter(mpg > 20) |>
+  arrange(desc(wt))|>
+  mutate(mpg = mpg * 100)|>
+  group_by(cyl)|>
+  summarize(mpg_avg = mean(mpg),
+            wt_avg = mean(wt),
+            .groups = "drop") |>
+  knitr::kable()
+
+Data_cars |>
+  filter(mpg > 20) |>
+  arrange(desc(wt))|>
+  mutate(mpg = mpg * 100)|>
+  knitr::kable()

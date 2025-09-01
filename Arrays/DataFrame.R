@@ -1,3 +1,5 @@
+library(tibble)
+
 Videogames <- data.frame(
     name = c("Mario Kart World", "Donkey Kong: Bananza", "Wuchang"),
     metascore = c(90, 91, 75)
@@ -12,3 +14,12 @@ cat("Median:",median(Videogames$metascore) , "\n")
 MetaScores <- sort(Videogames$metascore)
 
 print(median(MetaScores))
+
+Videogames_two <- tribble(
+  ~name, ~metascore,
+  "Mario Kart World", 90,
+  "Donkey Kong", 91
+  )
+
+Videogames_two
+

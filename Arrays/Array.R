@@ -15,7 +15,6 @@ multiarray2 <- array(4*(1:(4 * 3*2)), dim = c(4, 3, 2))
 print(multiarray2)
 
 
-
 # Leeres neues Array mit vertauschten Zeilen/Spalten
 transposed_array <- array(dim = c(3, 4, 2))  # war (4,3,2) → jetzt (3,4,2)
 
