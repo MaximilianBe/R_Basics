@@ -25,7 +25,16 @@ p5 <- plot_ly(
 
   marker = list(color = ~number_IDs),
   colors = "Viridis",
-  showlegend = FALSE
+  showlegend = FALSE,
+
+  text = ~ paste(
+    "Different IDs:",
+    number_IDs,
+    "<br>Number of companies:",
+    number_of_companies
+  ),
+  textposition = "none",
+  hoverinfo = "text"
 ) |>
   layout(
     title = list(
