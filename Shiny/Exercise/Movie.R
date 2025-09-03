@@ -59,11 +59,15 @@ server <- function(input, output, session) {
       "Keys/shiny_users.sqlite"
     )
   )
-  shinymanager::custom_decrypt_data_2(
-    movie_data,
-    path_to_keys_db = "Keys/keys_database.sqlite",
-    path_to_user_db = "Keys/shiny_users.sqlite"
-  )
+  observeEvent(input$shinymanager_where, {
+    if (input$shinymanager_where == "application") {
+      shinymanager::custom_decrypt_data_2(
+        movie_data,
+        path_to_keys_db = "Keys/keys_database.sqlite",
+        path_to_user_db = "Keys/shiny_users.sqlite"
+      )
+    }
+  })
   ### ----- Funcionality -----
 }
 
