@@ -3,12 +3,13 @@ SidebarUI <- function(
   id,
   axis,
   labels = list(x = "X", y = "Y", color = "Color"),
-  choices = c("Documentary", "Feature Film", "TV Movie")
+  choices = c("Documentary", "Feature Film", "TV Movie"),
+  color = c("Type", "Genre", "AudienceRating")
 ) {
   tagList(
     selectInput(NS(id, "Y_axis"), paste0(labels$y, "-Axis:"), choices = axis),
     selectInput(NS(id, "X_axis"), paste0(labels$x, "-Axis:"), choices = axis),
-    selectInput(NS(id, "color"), paste0(labels$color, " by:"), choices = axis),
+    selectInput(NS(id, "color"), paste0(labels$color, " by:"), choices = color),
     sliderInput(
       NS(id, "alpha"),
       "Alpha:",

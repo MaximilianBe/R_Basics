@@ -127,7 +127,9 @@ server <- function(input, output, session) {
         x = .data[[data$x()]],
         y = .data[[data$y()]],
         color = .data[[data$color()]],
-      )
+      ),
+      xlim(10, 100),
+      ylim(0, 100)
     ) +
       geom_point(alpha = data$alpha(), size = data$size()) +
       ggtitle(if (data$title() != "") data$title() else "Movie Plot") +
