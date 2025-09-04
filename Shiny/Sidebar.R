@@ -1,3 +1,4 @@
+library(shiny)
 # Module Definitionen
 SidebarUI <- function(
   id,
